@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -24,4 +26,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: reflux0301/gotbitches:latest
+          tags: ghcr.io/reflux0301/gotbitches:latest
